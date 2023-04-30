@@ -2,38 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Easybank landing page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
+
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-
-  Home
-  About
-  Contact
-  Blog
-  Careers
-
-  Request Invite
-
-
-
-  Next generation digital banking
-
-  Take your financial life online. Your Easybank account will be a one-stop-shop 
-  for spending, saving, budgeting, investing, and much more.
-
-  Request Invite
-
-
+  <header>
+    <div class="container">
+      <a href="index.html"><img src="./images/logo.svg" alt="Easybank logo"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#"></a>About</li>
+          <li><a href="#"></a>Contact</li>
+          <li><a href="#"></a>Blog</li>
+          <li><a href="#"></a>Careers</li>
+        </ul>
+      </nav>
+      <a class="btn" href="#">Request Invite</a>
+    </div>
+  </header>
+  <main>
+    <section class="section-main">
+      <div class="container">
+        <div class="intro-text">
+          <h1>Next generation digital banking</h1>
+          <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.</p>
+          <a class="btn" href="#">Request Invite</a>
+        </div>
+        <div class="intro-image">
+          <img class="bg-intro-mobile" src="./images/bg-intro-mobile.svg" alt="">
+          <img class="bg-intro-desktop" src="./images/bg-intro-desktop.svg" alt="">
+          <img src="./images/image-mockups.png" alt="App showcase">
+        </div>
+      </div>
+    </section>
+  </main>
 
   Why choose Easybank?
 
@@ -97,5 +113,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

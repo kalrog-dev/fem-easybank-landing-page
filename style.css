@@ -1,0 +1,120 @@
+:root {
+    /* Colors */
+    --clr-primary-blue: hsl(233, 26%, 24%);
+    --clr-primary-green: hsl(136, 65%, 51%);
+    --clr-primary-cyan: hsl(192, 70%, 51%);
+    --clr-neutral-gray: hsl(233, 8%, 62%);
+    --clr-neutral-gray-light: hsl(220, 16%, 96%);
+    --clr-neutral-offwhite: hsl(0, 0%, 98%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+
+    /* Typography */
+    --ff: 'Public Sans', sans-serif;
+    --fs-p: 0.9375rem;
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.25rem;
+    --fs-h4: 1rem;
+    --fs-btn: 0.875rem;
+    --fs-small: 0.625rem;
+    --fs-art-p: 0.8125rem;
+    --fw-l: 300;
+    --fw-r: 400;
+    --fw-b: 700;
+
+    /* Layout */
+    --spacer: 1em;
+
+    /* Effects */
+    --br: 5px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==============
+General
+================= */
+body {
+    font-family: var(--ff);
+    font-size: var(--fs-p);
+    font-weight: var(--fw-r);
+}
+
+.container {
+    width: 87.2%;
+    margin-inline: auto;
+    border: 2px solid magenta;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==============
+Buttons
+================= */
+.btn {
+
+}
+
+/* ==============
+Typography
+================= */
+h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-l);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+/* ==============
+Layout
+================= */
+header {
+    background-color: lightblue;
+}
+
+.section-main {
+    position: relative;
+}
+
+.bg-intro-mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+}
+
+.bg-intro-desktop {
+    display: none;
+}
+
+/* ==============
+Media queries
+================= */
+@media (min-width: 1440) {
+    .bg-intro-mobile {
+        display: none;
+    }
+
+    .bg-intro-desktop {
+        display: block;
+    }
+}
