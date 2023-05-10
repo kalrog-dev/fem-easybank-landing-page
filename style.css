@@ -102,6 +102,15 @@ header {
     z-index: -2;
 }
 
+/* Footer */
+footer {
+    background-color: var(--clr-primary-blue);
+}
+
+footer svg {
+    fill: var(--clr-neutral-white);
+}
+
 .bg-intro-desktop {
     display: none;
 }
