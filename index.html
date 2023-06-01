@@ -3,52 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Easybank landing page</title>
-
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
-
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="container">
-      <a href="index.html"><img src="./images/logo.svg" alt="Easybank logo"></a>
+    <div class="nav-container container">
+      <a class="nav-logo" href="index.html"><img src="./images/logo.svg" alt="Easybank logo"></a>
+      <button class="menu-button">
+        <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="11"><g fill="#2D314D" fill-rule="evenodd"><path d="M0 0h24v1H0zM0 5h24v1H0zM0 10h24v1H0z"/></g></svg>
+      </button>
       <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#"></a>About</li>
-          <li><a href="#"></a>Contact</li>
-          <li><a href="#"></a>Blog</li>
-          <li><a href="#"></a>Careers</li>
+        <ul class="main-nav-list">
+          <li class="main-nav-item"><a href="index.html">Home</a></li>
+          <li class="main-nav-item"><a href="#section-about"></a>About</li>
+          <li class="main-nav-item"><a href="#"></a>Contact</li>
+          <li class="main-nav-item"><a href="#section-articles"></a>Blog</li>
+          <li class="main-nav-item"><a href="#"></a>Careers</li>
         </ul>
       </nav>
-      <a class="btn" href="#">Request Invite</a>
+      <a class="btn btn-header" href="#">Request Invite</a>
+    </div>
+    <div class="intro-image" aria-hidden="true">
+      <picture>
+        <source media="(min-width:1440px)" srcset="./images/bg-intro-desktop.svg">
+        <img class="image-background" src="./images/bg-intro-mobile.svg" alt="Background image">
+      </picture> 
+      <img class="image-phones" src="./images/image-mockups.png" alt="App showcase">
     </div>
   </header>
   <main>
-    <section class="section-main">
+    <section id="section-main">
       <div class="container">
         <div class="intro-text">
           <h1>Next generation digital banking</h1>
           <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.</p>
           <a class="btn" href="#">Request Invite</a>
         </div>
-        <div class="intro-image">
-          <img class="bg-intro-mobile" src="./images/bg-intro-mobile.svg" alt="">
-          <img class="bg-intro-desktop" src="./images/bg-intro-desktop.svg" alt="">
-          <img src="./images/image-mockups.png" alt="App showcase">
-        </div>
       </div>
-    </section class="section-about">
+    </section id="section-about">
       <div class="container">
         <h2>Why choose Easybank?</h2>
         <p>We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.</p>
@@ -75,7 +73,7 @@
           </div>
         </div>
       </div>
-    <section class="section-articles">
+    <section id="section-articles">
       <div class="container">
         <h2>Latest Articles</h2>
         <div class="grid-container">
@@ -147,11 +145,5 @@
       </div>
     </div>
   </footer>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-  <script src="app.js"></script>
 </body>
 </html>

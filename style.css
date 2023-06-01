@@ -3,10 +3,10 @@
     --clr-primary-blue: hsl(233, 26%, 24%);
     --clr-primary-green: hsl(136, 65%, 51%);
     --clr-primary-cyan: hsl(192, 70%, 51%);
-    --clr-neutral-gray: hsl(233, 8%, 62%);
-    --clr-neutral-gray-light: hsl(220, 16%, 96%);
-    --clr-neutral-offwhite: hsl(0, 0%, 98%);
-    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-500: hsl(233, 8%, 62%);
+    --clr-neutral-300: rgb(243, 244, 246);
+    --clr-neutral-200: hsl(0, 0%, 98%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
 
     /* Typography */
     --ff: 'Public Sans', sans-serif;
@@ -18,12 +18,10 @@
     --fs-btn: 0.875rem;
     --fs-small: 0.625rem;
     --fs-art-p: 0.8125rem;
-    --fw-l: 300;
-    --fw-r: 400;
-    --fw-b: 700;
 
     /* Layout */
-    --spacer: 1em;
+    --wrapper-width: 87.2%;
+    --wrapper-margin: calc((100% - var(--wrapper-width)) / 2);
 
     /* Effects */
     --br: 5px;
@@ -39,27 +37,45 @@
 General
 ================= */
 body {
+    text-align: center;
     font-family: var(--ff);
     font-size: var(--fs-p);
-    font-weight: var(--fw-r);
+    font-weight: 400;
+    color: var(--clr-neutral-500);
+    line-height: 1.66;
 }
 
 .container {
-    width: 87.2%;
+    width: var(--wrapper-width);
     margin-inline: auto;
     border: 2px solid magenta;
 }
 
 img {
     display: block;
+    width: 100%;
     max-width: 100%;
+}
+
+picture {
+    display: block;
 }
 
 /* ==============
 Buttons
 ================= */
 .btn {
+    display: inline-block;
+    padding: 0.65em 2.1em;
+    color: var(--clr-neutral-100);
+    font-size: --fs-btn;
+    background: linear-gradient(90deg, var(--clr-primary-green), var(--clr-primary-cyan));
+    border-radius: 100vw;
+    cursor: pointer;
+}
 
+.btn-header {
+    display: none;
 }
 
 /* ==============
@@ -67,7 +83,10 @@ Typography
 ================= */
 h1 {
     font-size: var(--fs-h1);
-    font-weight: var(--fw-l);
+    font-weight: 300;
+    line-height: 1.175;
+    color: var(--clr-primary-blue);
+    margin-bottom: 16px;
 }
 
 h2 {
@@ -82,24 +101,66 @@ h4 {
     font-size: var(--fs-h4);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-bottom: 32px;
+}
+
 /* ==============
 Layout
 ================= */
-header {
-    background-color: lightblue;
+/* Header */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    background-color: var(--clr-neutral-100);
 }
 
-.section-main {
+.nav-logo {
+    
+}
+
+.main-nav {
+    display: none;
+}
+
+.menu-button {
+    padding: 0.4em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Phones image + background */
+.intro-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
+    overflow: hidden;
+    border: 2px solid magenta;
 }
 
-.bg-intro-mobile {
+.image-background {
+    position: relative;
+    transform: translateY(-13.3%);
+    width: 100%;
+}
+
+.image-phones {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -2;
+    transform: translateY(-30%);
+}
+
+/* Main */
+#section-main {
+    margin-top: -26%;
 }
 
 /* Footer */
@@ -108,22 +169,12 @@ footer {
 }
 
 footer svg {
-    fill: var(--clr-neutral-white);
-}
-
-.bg-intro-desktop {
-    display: none;
+    fill: var(--clr-neutral-100);
 }
 
 /* ==============
 Media queries
 ================= */
 @media (min-width: 1440) {
-    .bg-intro-mobile {
-        display: none;
-    }
-
-    .bg-intro-desktop {
-        display: block;
-    }
+    
 }
