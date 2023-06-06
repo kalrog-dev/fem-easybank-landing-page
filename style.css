@@ -155,6 +155,19 @@ p {
     color: var(--clr-neutral-500);
 }
 
+.bottom-nav-link,
+.copy {
+    font-size: var(--fs-p);
+    font-weight: 400;
+    line-height: 1.73;
+    letter-spacing: -0.23px;
+    color: var(--clr-neutral-100);
+}
+
+.copy {
+    opacity: 0.5;
+}
+
 /* ==============
 Layout
 ================= */
@@ -268,6 +281,12 @@ footer {
     background-color: var(--clr-primary-blue);
 }
 
+footer .btn {
+    display: block;
+    width: max-content;
+    margin: 2em auto 1.5em;
+}
+
 .footer-logo-image {
     
 }
@@ -293,6 +312,14 @@ footer {
     align-items: center;
     gap: 1em;
     margin-block: 2em;
+}
+
+.bottom-nav-list {
+    list-style: none;
+}
+
+.bottom-nav-item {
+    margin-block: 0.5em;
 }
 
 /* ==============
