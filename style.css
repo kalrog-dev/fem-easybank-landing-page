@@ -73,6 +73,10 @@ picture {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
 /* ==============
 Buttons
 ================= */
@@ -173,6 +177,7 @@ Layout
 ================= */
 /* Header */
 .nav-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -181,7 +186,27 @@ Layout
 }
 
 .main-nav {
-    display: none;
+    position: absolute;
+    top: 80px;
+    inset: 80px 0 auto;
+    color: var(--clr-primary-blue);
+}
+
+.main-nav-list {
+    list-style: none;
+    border-radius: var(--br);
+    overflow: hidden;
+}
+
+.main-nav-link {
+    display: block;
+    padding-block: 1em;
+    /* border-radius: var(--br); */
+    background-color: var(--clr-neutral-100);
+}
+
+.main-nav-link:hover {
+    background-color: var(--clr-neutral-300);
 }
 
 .menu-button {
@@ -198,6 +223,7 @@ Layout
     justify-content: center;
     position: relative;
     overflow: hidden;
+    z-index: -1;
 }
 
 .image-background {
