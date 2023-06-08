@@ -182,13 +182,15 @@ Layout
     justify-content: space-between;
     align-items: center;
     height: 64px;
+    padding-inline: var(--wrapper-margin);
     background-color: var(--clr-neutral-100);
+    z-index: 10;
 }
 
 .main-nav {
     position: absolute;
     top: 80px;
-    inset: 80px 0 auto;
+    inset: 80px var(--wrapper-margin) auto;
     color: var(--clr-primary-blue);
 }
 
@@ -201,7 +203,6 @@ Layout
 .main-nav-link {
     display: block;
     padding-block: 1em;
-    /* border-radius: var(--br); */
     background-color: var(--clr-neutral-100);
 }
 
@@ -216,14 +217,22 @@ Layout
     cursor: pointer;
 }
 
-/* Phones image + background */
+/* Main section */
+#section-main {
+    padding-bottom: 6em;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .intro-image {
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    z-index: -1;
+    margin-bottom: -20%;
 }
 
 .image-background {
@@ -235,12 +244,6 @@ Layout
 .image-phones {
     position: absolute;
     transform: translateY(-30%);
-}
-
-/* Main section */
-#section-main {
-    margin-top: -26%;
-    padding-bottom: 6em;
 }
 
 /* About section */
@@ -313,10 +316,6 @@ footer .btn {
     margin: 2em auto 1.5em;
 }
 
-.footer-logo-image {
-    
-}
-
 .footer-logo-text {
     fill: white;
 }
@@ -351,6 +350,56 @@ footer .btn {
 /* ==============
 Media queries
 ================= */
-@media (min-width: 1440) {
-    
+@media (min-width: 1440px) {
+    :root {
+        /* Typography */
+        --fs-p: 1.125rem;
+        --fs-h1: 3.5rem;
+        --fs-h2: 2.5rem;
+        --fs-h3: 1.5rem;
+
+        /* Layout */
+        --wrapper-width: 77.1%;
+    }
+
+    /* General styles */
+    body, 
+    h2 {
+        text-align: left;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5em;
+    }
+
+    /* Main section */
+    #section-main {
+        margin-top: 0;
+        padding-bottom: 6em;
+    }
+
+    .main-container {
+        flex-direction: row;
+        align-items: center;
+        width: var(--wrapper-width);
+        margin-inline: auto;
+    }
+
+    .intro-image {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .image-background {
+        transform: translateY(-10%);
+        width: 1200px;
+    }
+
+    .image-phones {
+        transform: translateY(-10%);
+        width: 700px;
+    }
 }
