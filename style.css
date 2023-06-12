@@ -43,7 +43,7 @@ body {
     font-weight: 400;
     color: var(--clr-neutral-500);
     line-height: 1.66;
-    background-color: var(--clr-neutral-200);
+    background-color: hsl(0, 0%, 92%);
 }
 
 .container {
@@ -220,6 +220,7 @@ Layout
 /* Main section */
 #section-main {
     padding-bottom: 6em;
+    background-color: var(--clr-neutral-200);
 }
 
 .main-container {
@@ -266,6 +267,7 @@ Layout
 #section-articles {
     padding-block: 5em 6em;
     text-align: left;
+    background-color: var(--clr-neutral-200);
 }
 
 .article-container {
@@ -368,20 +370,33 @@ Media queries
         text-align: left;
     }
 
+    body {
+        max-width: 1440px;
+        margin-inline: auto;
+    }
+
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.5em;
     }
 
+    header {
+        position: relative;
+        z-index: 100;
+    }
+
     /* Main section */
     #section-main {
-        margin-top: 0;
-        padding-bottom: 6em;
+        padding-bottom: 0em;
+        height: min(68vh, 900px);
+        overflow-x: clip;
     }
 
     .main-container {
+        height: 100%;
         flex-direction: row;
         align-items: center;
+        gap: 6em;
         width: var(--wrapper-width);
         margin-inline: auto;
     }
@@ -394,12 +409,20 @@ Media queries
     }
 
     .image-background {
-        transform: translateY(-10%);
-        width: 1200px;
+        position: relative;
+        right: -250px;
+        transform: translateY(-16%) scale(2.2);
+        z-index: 1;
     }
 
     .image-phones {
-        transform: translateY(-10%);
+        transform: translateY(-16%) scale(1.2);
         width: 700px;
+        z-index: 10;
+    }
+
+    #section-about {
+        position: relative;
+        z-index: 2;
     }
 }
