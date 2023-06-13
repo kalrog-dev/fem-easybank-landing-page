@@ -17,7 +17,10 @@
     --fs-h4: 1rem;
     --fs-btn: 0.875rem;
     --fs-small: 0.625rem;
+    --fs-dektop-nav: 0.875rem;
+    --fs-about-art-p: 0.9375rem;
     --fs-art-p: 0.8125rem;
+    --fs-footer-p: 0.9375rem;
 
     /* Layout */
     --wrapper-width: 87.2%;
@@ -25,6 +28,8 @@
 
     /* Effects */
     --br: 5px;
+
+    scroll-behavior: smooth;
 }
 
 * {
@@ -230,6 +235,10 @@ Layout
     flex-direction: column-reverse;
 }
 
+.intro-text {
+    padding-inline: var(--wrapper-margin);
+}
+
 .intro-image {
     display: flex;
     flex-direction: column;
@@ -314,7 +323,7 @@ footer {
     background-color: var(--clr-primary-blue);
 }
 
-footer .btn {
+.footer-btn {
     display: block;
     width: max-content;
     margin: 2em auto 1.5em;
@@ -368,13 +377,6 @@ Media queries
 
 @media (min-width: 992px) {
     :root {
-        /* Typography */
-        --fs-p: 1.125rem;
-        --fs-h1: 3.5rem;
-        --fs-h2: 2.5rem;
-        --fs-h3: 1.5rem;
-        --fs-about-art-p: 1rem;
-
         /* Layout */
         --wrapper-width: 77.1%;
     }
@@ -388,6 +390,48 @@ Media queries
     header {
         position: relative;
         z-index: 100;
+    }
+
+    .hide {
+        display: block;
+    }
+
+    /* Header */
+    .nav-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+    }
+    
+    .main-nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25em;
+    }
+    
+    .main-nav-link {
+        display: block;
+        padding-block: 1em;
+        font-size: var(--fs-dektop-nav);
+        color: var(--clr-neutral-500);
+        background-color: var(--clr-neutral-100);
+    }
+    
+    .menu-button {
+        display: none;
+    }
+
+    .btn-header {
+        display: inline-block;
+        padding: 0.75em 2.5em;
+        font-size: 0.875rem;
+        font-weight: 700;
     }
 
     /* Main section */
@@ -404,6 +448,10 @@ Media queries
         gap: 0;
         width: var(--wrapper-width);
         margin-inline: auto;
+    }
+
+    .intro-text {
+        padding-inline: 0;
     }
 
     .intro-image {
@@ -445,16 +493,86 @@ Media queries
         font-size: var(--fs-about-art-p);
         margin-bottom: 0;
     }
+
+    /* Footer */
+    .footer-container {
+        display: flex;
+    }
+
+    .footer-container .col-one {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 4.5em;
+    }
+
+    .footer-container .col-three {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-left: auto;
+    }
+
+    .icon-container {
+        margin: 0;
+    }
+
+    .bottom-nav-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-flow: column;
+        column-gap: 1.5em;
+    }
+
+    .bottom-nav-item {
+        margin: 0;
+    }
+
+    .bottom-nav-link, .copy {
+        font-size: var(--fs-footer-p);
+    }
+
+    .footer-btn {
+        margin: 0;
+        padding: 0.75em 2.5em;
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
 }
 
 @media (min-width: 1200px) {
+    /* Header */
+    .main-nav-list {
+        gap: 1.875em;
+    }
+
     /* Main section */
     .main-container {
         gap: 2em;
     }
+
+    /* Footer */
+    .footer-container .col-one {
+        margin-right: 6em;
+    }
+
+    .bottom-nav-list {
+        column-gap: 4em;
+    }
 }
 
 @media (min-width: 1400px) {
+    :root {
+        /* Typography */
+        --fs-p: 1.125rem;
+        --fs-h1: 3.5rem;
+        --fs-h2: 2.5rem;
+        --fs-h3: 1.5rem;
+        --fs-about-art-p: 1rem;
+    }
+
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
         gap: 1.5em;
