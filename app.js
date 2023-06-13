@@ -8,6 +8,7 @@ const body = document.querySelector('body');
 // Hide/show mobile navigation
 menuBtn.addEventListener('click', () => {
     handleMenuClick();
+    !nav.classList.contains('hide') && body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
 });
 
 // Close navigation when one of the links is clicked
@@ -24,6 +25,5 @@ function handleMenuClick() {
         document.querySelector('.backdrop').remove();
     } else {
         menuIcon.src = './images/icon-close.svg';
-        body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
     }
 }

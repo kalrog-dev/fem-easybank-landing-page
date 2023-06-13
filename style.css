@@ -286,6 +286,7 @@ Layout
 
 .about-article {
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 .section-about-icon {
@@ -303,9 +304,9 @@ Layout
 
 .article-container {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    height: min-content;
+    height: 100%;
     background-color: var(--clr-neutral-100);
     border-radius: 5px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
@@ -408,12 +409,7 @@ Media queries
     }
 }
 
-@media (min-width: 992px) {
-    :root {
-        /* Layout */
-        --wrapper-width: 77.1%;
-    }
-
+@media (min-width: 768px) {
     /* General styles */
     body, 
     h2 {
@@ -431,6 +427,61 @@ Media queries
         z-index: 100;
     }
 
+    /* Main section */
+    #section-main {
+        padding-bottom: 0em;
+        height: min(68vh, 680px);
+        overflow-x: clip;
+    }
+
+    .main-container {
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        width: var(--wrapper-width);
+        margin-inline: auto;
+    }
+
+    .intro-text {
+        padding-inline: 0;
+    }
+
+    .intro-image {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .image-background {
+        position: relative;
+        right: -250px;
+        transform: translateY(-16%) translateX(-5%) scale(2.2);
+        z-index: 1;
+    }
+
+    .image-phones {
+        transform: translateY(-16%) translateX(20%) scale(1.2);
+        width: 700px;
+        z-index: 10;
+    }
+
+    /* About section */
+    #section-about {
+        position: relative;
+        padding-bottom: 6em;
+        z-index: 2;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        /* Layout */
+        --wrapper-width: 77.1%;
+    }
+
+    /* General styles */
     .hide {
         display: block;
     }
@@ -496,52 +547,15 @@ Media queries
     }
 
     /* Main section */
-    #section-main {
-        padding-bottom: 0em;
-        height: min(68vh, 680px);
-        overflow-x: clip;
-    }
-
-    .main-container {
-        height: 100%;
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
-        width: var(--wrapper-width);
-        margin-inline: auto;
-    }
-
-    .intro-text {
-        padding-inline: 0;
-    }
-
-    .intro-image {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-bottom: 0;
-    }
-
     .image-background {
-        position: relative;
-        right: -250px;
         transform: translateY(-16%) scale(2.2);
-        z-index: 1;
     }
 
     .image-phones {
         transform: translateY(-16%) translateX(40%) scale(1.2);
-        width: 700px;
-        z-index: 10;
     }
 
     /* About section */
-    #section-about {
-        position: relative;
-        padding-bottom: 6em;
-        z-index: 2;
-    }
-
     .about-introduction {
         max-width: 650px;
     }
