@@ -224,6 +224,12 @@ Layout
     cursor: pointer;
 }
 
+.backdrop {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, hsla(233, 26%, 24%, 100%), hsla(233, 26%, 24%, 0%));
+}
+
 /* Main section */
 #section-main {
     padding-bottom: 6em;

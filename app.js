@@ -5,20 +5,25 @@ const nav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav-link');
 const body = document.querySelector('body');
 
-console.log(menuIcon.src)
-
 // Hide/show mobile navigation
 menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('hide');
-
-    nav.classList.contains('hide') ? menuIcon.src = './images/icon-hamburger.svg' : menuIcon.src = './images/icon-close.svg';
+    handleMenuClick();
 });
 
 // Close navigation when one of the links is clicked
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        nav.classList.toggle('hide');
-
-        nav.classList.contains('hide') ? menuIcon.src = './images/icon-hamburger.svg' : menuIcon.src = './images/icon-close.svg';
+        handleMenuClick();
     })
 })
+
+function handleMenuClick() {
+    nav.classList.toggle('hide');
+    if (nav.classList.contains('hide')) {
+        menuIcon.src = './images/icon-hamburger.svg';
+        document.querySelector('.backdrop').remove();
+    } else {
+        menuIcon.src = './images/icon-close.svg';
+        body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
+    }
+}

@@ -1,3 +1,5 @@
-The web page is available at the following URL:
+# Frontend Mentor - Easybank landing page solution
 
-...WiP
+This is a solution to the [Easybank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+Live URL: 
