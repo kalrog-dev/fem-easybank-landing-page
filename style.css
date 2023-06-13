@@ -343,9 +343,14 @@ footer {
     background-color: var(--clr-primary-blue);
 }
 
+.footer-container .col-three {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .footer-btn {
-    display: block;
-    width: max-content;
     margin: 2em auto 1.5em;
 }
 
@@ -371,8 +376,6 @@ footer {
 .social-icon-link:hover .social-icon-img path {
     fill: var(--clr-primary-green);
 }
-
-
 
 .icon-container {
     display: flex;
@@ -565,9 +568,6 @@ Media queries
     }
 
     .footer-container .col-three {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: flex-end;
         margin-left: auto;
     }
