@@ -427,10 +427,14 @@ Media queries
         z-index: 100;
     }
 
+    footer {
+        text-align: center;
+    }
+
     /* Main section */
     #section-main {
         padding-bottom: 0em;
-        height: min(68vh, 680px);
+        height: 680px;
         overflow-x: clip;
     }
 
@@ -484,6 +488,10 @@ Media queries
     /* General styles */
     .hide {
         display: block;
+    }
+
+    footer {
+        text-align: left;
     }
 
     /* Header */
