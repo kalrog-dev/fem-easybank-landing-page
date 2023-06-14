@@ -7,6 +7,7 @@ const body = document.querySelector('body');
 
 // Hide/show mobile navigation
 menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('hide');
     handleMenuClick();
     !nav.classList.contains('hide') && body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
 });
@@ -14,12 +15,12 @@ menuBtn.addEventListener('click', () => {
 // Close navigation when one of the links is clicked
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
+        nav.classList.add('hide');
         handleMenuClick();
     })
 })
 
 function handleMenuClick() {
-    nav.classList.toggle('hide');
     if (nav.classList.contains('hide')) {
         menuIcon.src = './images/icon-hamburger.svg';
         document.querySelector('.backdrop').remove();
