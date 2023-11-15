@@ -14,6 +14,7 @@ menuBtn?.addEventListener('click', () => {
 
 // Close navigation when one of the links is clicked
 nav?.addEventListener('click', (event) => {
+  if (!event.target) return;
   const target = event.target as HTMLElement | null;
 
   // If the click event bubbled up from a navigation link

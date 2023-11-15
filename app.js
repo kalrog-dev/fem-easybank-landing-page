@@ -11,6 +11,8 @@ menuBtn === null || menuBtn === void 0 ? void 0 : menuBtn.addEventListener('clic
 });
 // Close navigation when one of the links is clicked
 nav === null || nav === void 0 ? void 0 : nav.addEventListener('click', function (event) {
+    if (!event.target)
+        return;
     var target = event.target;
     // If the click event bubbled up from a navigation link
     if (target === null || target === void 0 ? void 0 : target.closest('.main-nav-link')) {
