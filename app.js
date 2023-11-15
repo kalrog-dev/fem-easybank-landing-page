@@ -1,30 +1,32 @@
 // Responsive navigation
-const menuBtn = document.querySelector('.menu-button');
-const menuIcon = document.querySelector('.menu-icon');
-const nav = document.querySelector('.main-nav');
-const navLinks = document.querySelectorAll('.main-nav-link');
-const body = document.querySelector('body');
-
+var menuBtn = document.querySelector('.menu-button');
+var menuIcon = document.querySelector('.menu-icon');
+var nav = document.querySelector('.main-nav');
 // Hide/show mobile navigation
-menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('hide');
+menuBtn === null || menuBtn === void 0 ? void 0 : menuBtn.addEventListener('click', function () {
+    nav === null || nav === void 0 ? void 0 : nav.classList.toggle('hide');
     handleMenuClick();
-    !nav.classList.contains('hide') && body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
+    // Add a backdrop background if the mobile navigation is shown
+    !(nav === null || nav === void 0 ? void 0 : nav.classList.contains('hide')) && document.body.insertAdjacentHTML('afterbegin', '<div class="backdrop"></div>');
 });
-
 // Close navigation when one of the links is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.add('hide');
+nav === null || nav === void 0 ? void 0 : nav.addEventListener('click', function (event) {
+    var target = event.target;
+    // If the click event bubbled up from a navigation link
+    if (target === null || target === void 0 ? void 0 : target.closest('.main-nav-link')) {
+        nav === null || nav === void 0 ? void 0 : nav.classList.add('hide');
         handleMenuClick();
-    })
-})
-
+    }
+});
 function handleMenuClick() {
-    if (nav.classList.contains('hide')) {
+    if (!menuIcon)
+        return;
+    var backdrop = document.querySelector('.backdrop');
+    if (nav === null || nav === void 0 ? void 0 : nav.classList.contains('hide')) {
         menuIcon.src = './images/icon-hamburger.svg';
-        document.querySelector('.backdrop').remove();
-    } else {
+        backdrop && backdrop.remove();
+    }
+    else {
         menuIcon.src = './images/icon-close.svg';
     }
 }
