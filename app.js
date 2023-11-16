@@ -26,7 +26,7 @@ function handleMenuClick() {
     var backdrop = document.querySelector('.backdrop');
     if (nav === null || nav === void 0 ? void 0 : nav.classList.contains('hide')) {
         menuIcon.src = './images/icon-hamburger.svg';
-        backdrop && backdrop.remove();
+        backdrop === null || backdrop === void 0 ? void 0 : backdrop.remove();
     }
     else {
         menuIcon.src = './images/icon-close.svg';
