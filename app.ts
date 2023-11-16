@@ -30,7 +30,7 @@ function handleMenuClick() {
 
   if (nav?.classList.contains('hide')) {
     menuIcon.src = './images/icon-hamburger.svg';
-    backdrop && backdrop.remove();
+    backdrop?.remove();
   } else {
     menuIcon.src = './images/icon-close.svg';
   }
