@@ -24,7 +24,7 @@ nav?.addEventListener('click', (event) => {
   }
 });
 
-function handleMenuClick() {
+function handleMenuClick(): void {
   if (!menuIcon) return;
   const backdrop = document.querySelector('.backdrop') as HTMLDivElement | null;
 
