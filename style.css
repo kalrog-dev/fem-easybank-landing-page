@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 300;
+  src: url('./fonts/PublicSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 400;
+  src: url('./fonts/PublicSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Public Sans';
+  font-weight: 700;
+  src: url('./fonts/PublicSans-Bold.ttf');
+}
+
 :root {
     /* Colors */
     --clr-primary-blue: hsl(233, 26%, 24%);
